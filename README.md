@@ -5,7 +5,7 @@ This repository contains class work and projects from the [Quality Assurance Car
 This course will cover the fundamentals of QA, its role in the software development life cycle (SDLC), and the overarching concept of quality in software.
 ### Assignments
 1. [Create a GitHub Repository for your work.](https://github.com/sjcswank/qa-course-work/)
-2. [Edit and Commit a readme file.]()
+2. [Edit and Commit a readme file.](https://github.com/sjcswank/qa-course-work/commit/6f695d2218ccd10b94a1b18da71ac48a8602c00b)
 
 ## Manual Testing for QA Engineers
 This course will cover the concept of test plans in manual testing.
