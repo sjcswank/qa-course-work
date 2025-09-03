@@ -4,9 +4,9 @@
 - **Project:** QA Course Work
 
 ## Introduction
-**Overview:** 
-**Scope:**
-**Team/Stakeholders:**
+**Overview:**  
+**Scope:**  
+**Team/Stakeholders:**  
 
 ## Test Items
 1. Create New User
@@ -15,8 +15,8 @@
 4. Accessibility requirements for the landing page
 
 ## Test Criteria
-**Entry Criteria:** Conditions that must be met before testing begins.
-**Exit Criteria:** Conditions that must be met for testing to conclude.
+**Entry Criteria:** Conditions that must be met before testing begins.  
+**Exit Criteria:** Conditions that must be met for testing to conclude.  
 
 ## Resources
 **Human Resources:** 
@@ -29,16 +29,16 @@
 - Smartphone running Android 16 with Chrome 139 installed
 
 ## Schedule
-8/29/2025: Test Activities Begin
-8/30/2025: Preliminary Test Plan Written
-9/1/2025: Critical Test Cases Written
-9/2/2025: Test Plan Accepted
-9/12/2025: Testing Concluded
+8/29/2025: Test Activities Begin  
+8/30/2025: Preliminary Test Plan Written  
+9/1/2025: Critical Test Cases Written  
+9/2/2025: Test Plan Accepted  
+9/12/2025: Testing Concluded  
 
 ## Test Strategy
-**Types of Testing:** Functional, Performance, Accessibility, Acceptance.
-**Testing Environments:** Development, Staging, Prod
-**Device Matrix:** 
+**Types of Testing:** Functional, Performance, Accessibility, Acceptance.  
+**Testing Environments:** Development, Staging, Prod  
+**Device Matrix:**  
 | Platform | Operating System | Browser | Version |
 |:---------|:----------------:|:-------:|--------:|
 | PC       | Windows 10 Home  | Chrome  | 139     |
