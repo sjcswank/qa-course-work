@@ -8,7 +8,7 @@
 3. Enter username User1
 4. Enter password Pass1
 5. Re-enter password Pass1
-6. Click Create user
+6. Click Create user  
 **Expected Result:** The dashboard page should be shown with the user User1 logged in.  
 **Actual Result:**  
 **Status:**  
@@ -22,7 +22,7 @@
 2. Click button labled "Login"
 3. Enter username User1
 4. Enter password Pass1
-6. Click button labled "Login"
+6. Click button labled "Login"  
 **Expected Result:** The dashboard page should be shown with the user User1 logged in.  
 **Actual Result:**  
 **Status:**  
@@ -38,7 +38,7 @@
 4. Enter password Pass1
 6. Click button labled "Login"
 7. User1 should be displayed at the far right of the navigation bar.
-8. Click button labled "Log Out"
+8. Click button labled "Log Out"  
 **Expected Result:** The landing page should be shown, no user should be logged in.  
 **Actual Result:**  
 **Status:**  
