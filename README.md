@@ -13,3 +13,7 @@ This course will cover the concept of test plans in manual testing.
 1. [Create a Sample Test Plan](https://github.com/sjcswank/qa-course-work/commit/fd309fbc70ef2568dac30c67f249c7189e84f4f6)
 2. Add critical Test Case examples to the Test Plan.
 
+## 3. JavaScriot essentials for QA Engineers
+This course will cover the core concepts of JavaScript programming.
+### Assignments
+1. [Create a Sample index.html and 1st_code.js](https://github.com/sjcswank/qa-course-work/commit/e135d584261aae1ede6866efc714b06ccde8e2ac)
