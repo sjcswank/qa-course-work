@@ -25,7 +25,7 @@
 - Tools: Cyprus, Jira, GitHub
 - Techniques: Black Box testing, White Box testing
 **Hardware:**
-- PC running Windows 10 Home edition with chrome 139 installed
+- PC running Windows 11 with chrome 139 installed
 - Smartphone running Android 16 with Chrome 139 installed
 
 ## Schedule
