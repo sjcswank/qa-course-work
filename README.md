@@ -11,9 +11,9 @@ This course will cover the fundamentals of QA, its role in the software developm
 This course will cover the concept of test plans in manual testing.  
 ### Assignments  
 1. [Create a Sample Test Plan](https://github.com/sjcswank/qa-course-work/commit/fd309fbc70ef2568dac30c67f249c7189e84f4f6)  
-2. [Add critical Test Case examples to the Test Plan.](https://github.com/sjcswank/qa-course-work/commit/933f2ad7a958b0a57350ff6b2dd0300c7ea32efc)  
+2. [Add critical Test Case examples to the Test Plan.](https://github.com/sjcswank/qa-course-work/commit/a6faa854254bb01792e1074ca0881eff69560a56)  
 
-## 3. JavaScriot essentials for QA Engineers  
+## 3. JavaScript essentials for QA Engineers  
 This course will cover the core concepts of JavaScript programming.  
 ### Assignments  
 1. [Create a Sample index.html and 1st_code.js](https://github.com/sjcswank/qa-course-work/commit/e135d584261aae1ede6866efc714b06ccde8e2ac)  
