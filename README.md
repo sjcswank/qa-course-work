@@ -17,4 +17,4 @@ This course will cover the concept of test plans in manual testing.
 This course will cover the core concepts of JavaScript programming.  
 ### Assignments  
 1. [Create a Sample index.html and 1st_code.js](https://github.com/sjcswank/qa-course-work/commit/e135d584261aae1ede6866efc714b06ccde8e2ac)  
-2. [Practice JS essentials like Variables, Scope, Arrays, and Objects.](https://github.com/sjcswank/qa-course-work/commit/f6e8b77d0d38cd00c4a34ba0b4d4f099405f7ee7)
+2. [Practice JS essentials like Variables, Arrays, Functions, and Objects.](https://github.com/sjcswank/qa-course-work/commit/f6e8b77d0d38cd00c4a34ba0b4d4f099405f7ee7)
