@@ -18,3 +18,5 @@ This course will cover the core concepts of JavaScript programming.
 ### Assignments  
 1. [Create a Sample index.html and 1st_code.js](https://github.com/sjcswank/qa-course-work/commit/e135d584261aae1ede6866efc714b06ccde8e2ac)  
 2. [Practice JS essentials like Variables, Arrays, Functions, and Objects.](https://github.com/sjcswank/qa-course-work/commit/f6e8b77d0d38cd00c4a34ba0b4d4f099405f7ee7)
+3. [Create sample project for Cypress testing.](https://github.com/sjcswank/qa-course-work/commit/2022562973337a375eb122626aa52793af4e15e4)
+4. [Create first Cypress test spec- QACW-01 Create new user.](https://github.com/sjcswank/qa-course-work/commit/71edeeee3fd8391b7f41c0a84d9cbc1810285a3c)
