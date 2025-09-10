@@ -6,14 +6,14 @@
 
 1. Navigate to the landing page at "https://login.html"
 2. Click button labled "New User"
-3. Enter username User1
-4. Enter password Pass1
-5. Re-enter password Pass1
+3. Enter username test002@email.com
+4. Enter password Test002
+5. Re-enter password Test002
 6. Click Create user
 
-**Expected Result:** The dashboard page should be shown with the user User1 logged in.\
-**Actual Result:**\
-**Status:**\
+**Expected Result:** The Contacts page should be shown.\
+**Actual Result:** The Contacts page was shown.\
+**Status:** Passed 09/10/2025\
 \
 \
 \
