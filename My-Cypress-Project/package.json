@@ -1,0 +1,15 @@
+{
+  "name": "my-cypress-project",
+  "version": "1.0.0",
+  "description": "Cypress project for course work",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sjcswank/qa-course-work"
+  },
+  "author": "Heather Frank",
+  "license": "ISC"
+}
