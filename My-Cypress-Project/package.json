@@ -11,5 +11,8 @@
     "url": "https://github.com/sjcswank/qa-course-work"
   },
   "author": "Heather Frank",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "cypress-each": "^1.14.1"
+  }
 }
