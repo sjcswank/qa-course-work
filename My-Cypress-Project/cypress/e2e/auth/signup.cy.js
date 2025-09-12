@@ -26,37 +26,37 @@ describe('Sign Up Page', () => {
   ]
 
   it.each(USERS)((user) => `${user.test}: Should display "${user.error}" error alert.`, function (user) {
-    cy.wrap(this.emailInput).type(user.email)
-    cy.wrap(this.passwordInput).type(user.pass1)
-    cy.wrap(this.confirmPasswordInput).type(user.pass2)
-    cy.wrap(this.submitButton).click()
+    cy.get('@emailInput').type(user.email)
+    cy.get('@passwordInput').type(user.pass1)
+    cy.get('@confirmPasswordInput').type(user.pass2)
+    cy.get('@submitButton').click()
 
     cy.get('body > div.alert.alert-danger.alert-dismissible.fade.show').should('contain', user.error)
   })
 
 
     it('QACW-07: Should display "Email already in use." error alert.', function () {
-    cy.wrap(this.emailInput).type(EMAIL)
-    cy.wrap(this.passwordInput).type(PASSWORD)
-    cy.wrap(this.confirmPasswordInput).type(PASSWORD)
-    cy.wrap(this.submitButton).click()
+    cy.get('@emailInput').type(EMAIL)
+    cy.get('@passwordInput').type(PASSWORD)
+    cy.get('@confirmPasswordInput').type(PASSWORD)
+    cy.get('@submitButton').click()
     cy.get('#logout').click()
 
     cy.visit(SIGN_UP_URL)
     cy.get('#email').type(EMAIL)
     cy.get('#password1').type(PASSWORD)
     cy.get('#password2').type(PASSWORD)
-    cy.contains('Submit').click
+    cy.contains('Submit').click()
 
     cy.get('body > div.alert.alert-danger.alert-dismissible.fade.show').should('contain', 'Email already in use.')
   })
 
 
   it('QACW-01: Should navigate to Contats page', function () {
-    cy.wrap(this.emailInput).type(EMAIL)
-    cy.wrap(this.passwordInput).type(PASSWORD)
-    cy.wrap(this.confirmPasswordInput).type(PASSWORD)
-    cy.wrap(this.submitButton).click()
+    cy.get('@emailInput').type(EMAIL)
+    cy.get('@passwordInput').type(PASSWORD)
+    cy.get('@confirmPasswordInput').type(PASSWORD)
+    cy.get('@submitButton').click()
 
     cy.get('title').should('contain', 'Contacts')
   })
