@@ -21,3 +21,5 @@ This course will cover the core concepts of JavaScript programming.
 3. [Create sample project for Cypress testing.](https://github.com/sjcswank/qa-course-work/commit/2022562973337a375eb122626aa52793af4e15e4)
 4. [Create first Cypress test spec- QACW-01 Create new user.](https://github.com/sjcswank/qa-course-work/commit/71edeeee3fd8391b7f41c0a84d9cbc1810285a3c)
 5. [Practice Cypress.](https://github.com/sjcswank/qa-course-work/commit/832b3e522a49d198a170b1893b14528a2e290b68)
+6. [Create function create_user() to encapsulate the often repeated steps of creating a user on the Sign Up page.](https://github.com/sjcswank/qa-course-work/commit/5286ad41ad94bdec261b2fafcc18fb6fa3589db3)
+7. [Parameterze tests on the Sign Up page.](https://github.com/sjcswank/qa-course-work/commit/b2eb8108c3e9fa9cebc730ac5eb268b4bf6b45cf)
