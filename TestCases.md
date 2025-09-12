@@ -65,7 +65,7 @@
 5. Click "Submit"
 
 **Expected Result:** The Sign Up page with error alert "Passwords do no match." should be shown.\
-**Actual Result:** The Sign Up page with error alert "Passwords do no match." should be shown.\
+**Actual Result:** The Sign Up page with error alert "Passwords do no match." was shown.\
 **Status:** Passed 09/11/2025\
 \
 \
@@ -83,8 +83,8 @@
 5. Click "Submit"
 
 **Expected Result:** The Sign Up page with error alert "Password must be at least 7 characters long." should be shown.\
-**Actual Result:** The Sign Up page with error alert "Password must be at least 7 characters long." should be shown.\
-**Status:** Passed 09/11/2025\
+**Actual Result:** Error alert "Password must at least 7 characters long." was shown.\
+**Status:** Failed 09/11/2025\
 \
 \
 \
@@ -101,7 +101,7 @@
 5. Click "Submit"
 
 **Expected Result:** The Sign Up page with error alert "Email must be more than 3 characters long." should be shown.\
-**Actual Result:** The Sign Up page with error alert "Email must be more than 3 characters long." should be shown.\
+**Actual Result:** The Sign Up page with error alert "Email must be more than 3 characters long." was shown.\
 **Status:** Passed 09/11/2025\
 \
 \
@@ -125,5 +125,5 @@
 11. Click "Submit"
 
 **Expected Result:** The Sign Up page with error alert "Email already in use." should be shown.\
-**Actual Result:** The Sign Up page with error alert "Email already in use." should be shown.\
+**Actual Result:** The Sign Up page with error alert "Email already in use." was shown.\
 **Status:** Passed 09/11/2025\
