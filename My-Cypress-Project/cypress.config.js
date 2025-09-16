@@ -88,45 +88,6 @@ module.exports = defineConfig({
           });
         },
 
-        stopSystemUnderTest() {
-          console.log('Attempting to stop Python server. Current state:', !!systemUnderTest);
-          if (systemUnderTest) {
-            console.log('Stopping Python server...');
-            return new Promise((resolve) => {
-              const timeout = setTimeout(() => {
-                console.warn('Python server did not exit gracefully, forcing kill.');
-                systemUnderTest.kill('SIGKILL');
-              }, 5000);
-
-              systemUnderTest.on('exit', () => {
-                clearTimeout(timeout);
-                console.log('Python server stopped.');
-                systemUnderTest = null;
-                resolve(null);
-              });
-              
-              systemUnderTest.kill(); // Graceful kill (SIGTERM)
-            });
-          }
-          console.log('Python server not running, nothing to stop.');
-          return Promise.resolve(null);
-        },
-
-        async deleteTestData() {
-          const instanceDir = directoryPath + '/instance';
-          const dbFilePath = `${instanceDir}/database.db`;
-
-          try {
-            await waitForLockRelease(dbFilePath); // Wait for the lock to be released
-            await fs.rm(instanceDir, { recursive: true, force: true });
-            console.log(`Directory deleted successfully: ${instanceDir}`);
-          } catch (error) {
-            console.error(`Error removing directory ${instanceDir}:`, error);
-            throw error;
-          }
-          return null;
-        },
-
         async forceDeleteTestData() {
           const instanceDir = directoryPath + '/instance';
           try {
