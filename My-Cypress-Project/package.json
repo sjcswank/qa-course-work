@@ -2,7 +2,7 @@
   "name": "my-cypress-project",
   "version": "1.0.0",
   "description": "Cypress project for course work",
-  "main": "index.js",
+  "main": "e2e",
   "scripts": {
     "test": "npx cypress run"
   },
@@ -16,6 +16,7 @@
     "cypress-each": "^1.14.1"
   },
   "devDependencies": {
-    "cypress": "^15.2.0"
+    "cypress": "^15.2.0",
+    "cypress-xpath": "^2.0.1"
   }
 }

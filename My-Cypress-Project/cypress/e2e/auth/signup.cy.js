@@ -1,7 +1,7 @@
 describe('Sign Up Page', () => {
 //Sign Up page data
   const SIGN_UP_URL = 'http://127.0.0.1:5000/sign-up'
-  const EMAIL_SELECTOR = '#email'
+  const EMAIL_SELECTOR = '//input[@type="email"]'
   const PASSWORD_INPUT_SELECTOR = '#password1'
   const CONFIRM_PASSWORD_SELECTOR = '#password2'
   const SUBMIT_BUTTON_SELECTOR = 'Submit'
@@ -29,7 +29,7 @@ describe('Sign Up Page', () => {
   
   beforeEach('Set up for the test', () => {
     // 1. Kill any running server and delete previous test data
-    cy.task('killPythonProcess').then(() => {
+    cy.task('killSystemUnderTest').then(() => {
       return cy.task('forceDeleteTestData');
     }).then(() => {
       // 2. Start a brand new server
@@ -37,7 +37,8 @@ describe('Sign Up Page', () => {
     }).then(() => {
       // 3. Visit the page and alias elements
       cy.visit(SIGN_UP_URL);
-      cy.get(EMAIL_SELECTOR).as('emailInput');
+      //cy.xpath no longer supported, used for example only
+      cy.xpath(EMAIL_SELECTOR).as('emailInput');
       cy.get(PASSWORD_INPUT_SELECTOR).as('passwordInput');
       cy.get(CONFIRM_PASSWORD_SELECTOR).as('confirmPasswordInput');
     });
@@ -47,14 +48,15 @@ describe('Sign Up Page', () => {
     // 1. Disconnect the browser
     cy.visit('/', { failOnStatusCode: false });
     // 2. Stop the server after each test completes
-    cy.task('killPythonProcess').then(() => {
+    cy.task('killSystemUnderTest').then(() => {
       // 3. Delete data after the server is stopped
       return cy.task('forceDeleteTestData');
     });
   });
 
-  it('QACW-01: Should navigate to Contats page', function () {
+  it('QACW-01: Should display "User Created!" alert on Contacts page', function () {
     create_user(EMAIL, PASSWORD, PASSWORD)
+    cy.get('body > div.alert.alert-success.alert-dismissible.fade.show').should('contain', 'User Created!')
     cy.get('title').should('contain', 'Contacts')
   })
 

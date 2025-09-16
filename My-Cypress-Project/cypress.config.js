@@ -1,5 +1,7 @@
 const { defineConfig } = require('cypress');
 const { spawn, exec } = require('child_process');
+const { resolve } = require('path');
+const { Console } = require('console');
 const fs = require('fs').promises;
 
 const directoryPath = 'C:/Users/heath/Workspace/contact-list';
@@ -35,10 +37,17 @@ module.exports = defineConfig({
         startSystemUnderTest() {
           return new Promise((resolve, reject) => {
             // Kill any already running Python servers
-            if (systemUnderTest && systemUnderTest.exitCode === null) {
+            try {
+              if (typeof systemUnderTest.pid == 'number') {
                 console.warn('Python server is already running, based on state. Forcing kill...');
                 systemUnderTest.kill('SIGKILL');
                 systemUnderTest = null;
+              } 
+            } catch (e) {
+              if (e.code == 'TypeError') {
+                console.log('systemUnderTest not defined and not null: ' + systemUnderTest)
+                systemUnderTest = null
+              }
             }
 
             // Start new server
@@ -60,7 +69,7 @@ module.exports = defineConfig({
             systemUnderTest.stdout.on('data', handleOutput);
             systemUnderTest.stderr.on('data', handleOutput);
 
-            // This is the critical change: Handle errors and exit events together.
+            // Handle errors and exit events together.
             systemUnderTest.on('exit', (code, signal) => {
                 if (!hasResolved) { // If the promise hasn't resolved, it must have failed.
                     const errorMessage = `Python server exited unexpectedly with code ${code} and signal ${signal}.`;
@@ -69,7 +78,6 @@ module.exports = defineConfig({
                     reject(new Error(errorMessage));
                 } else {
                     console.log(`Python server exited normally with code ${code} and signal ${signal}.`);
-                    systemUnderTest = null;
                 }
             });
 
@@ -119,27 +127,36 @@ module.exports = defineConfig({
           return null;
         },
 
-        //TODO: refactor this task so it is not so flakey
-        killPythonProcess() {
+        killSystemUnderTest() {
           return new Promise((resolve, reject) => {
-            if (!systemUnderTest) {
-              console.log('No Python process to kill.');
-              return resolve(null);
-            }
-            console.log('Attempting to kill Python process with taskkill...');
-            exec(`taskkill /pid ${systemUnderTest.pid} /f /t`, (err, stdout, stderr) => {
-              if (err) {
-                console.error(`Error killing process: ${err.message}`);
-                // In some cases, the process might have already exited, so we proceed.
-              } else {
-                console.log(`Process with PID ${systemUnderTest.pid} killed.`);
+            try {
+              if (systemUnderTest && typeof systemUnderTest.pid == 'number') {
+                console.log('Attempting to kill Python process with taskkill...');
+                exec(`taskkill /pid ${systemUnderTest.pid} /f /t`, (err, stdout, stderr) => {
+                  if (err) {
+                    console.error(`Error killing process: ${err.message}`);
+                    console.log(systemUnderTest)
+                    // In some cases, the process might have already exited, so we proceed.
+                  } else {
+                    console.log(`Process with PID ${systemUnderTest.pid} killed.`);
+                  }
+                  systemUnderTest = null; // Clear the reference regardless of exec outcome
+                  resolve(null);
+                });
               }
-              systemUnderTest = null; // Clear the reference regardless of exec outcome
+              else if (!systemUnderTest) {
+                console.log('systemUnderTest is null: ' + systemUnderTest)
+                resolve(null);
+              }
+            } catch (e) {
+              console.log('Error: ' + e.message)
+              console.log('systemUnderTest not defined and not null: ' + systemUnderTest)
+              console.log('No Python process to kill.');
+              systemUnderTest = null;
               resolve(null);
-            });
-          });
+            }
+          })
         }
-
       });
       return config;
     },
