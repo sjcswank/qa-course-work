@@ -20,9 +20,10 @@ describe('Sign Up Page', () => {
 
 //Functions
   const create_user = (email, pass1, pass2) => {
-    cy.get('@emailInput').type(email)
-    cy.get('@passwordInput').type(pass1)
-    cy.get('@confirmPasswordInput').type(pass2)
+    //cy.xpath no longer supported, used for example only
+    cy.xpath(EMAIL_SELECTOR).type(email)
+    cy.get(PASSWORD_INPUT_SELECTOR).type(pass1)
+    cy.get(CONFIRM_PASSWORD_SELECTOR).type(pass2)
     cy.contains(SUBMIT_BUTTON_SELECTOR).click()
   }
   
@@ -35,12 +36,8 @@ describe('Sign Up Page', () => {
       // 2. Start a brand new server
       return cy.task('startSystemUnderTest');
     }).then(() => {
-      // 3. Visit the page and alias elements
+      // 3. Navigate to the Sing Up page
       cy.visit(SIGN_UP_URL);
-      //cy.xpath no longer supported, used for example only
-      cy.xpath(EMAIL_SELECTOR).as('emailInput');
-      cy.get(PASSWORD_INPUT_SELECTOR).as('passwordInput');
-      cy.get(CONFIRM_PASSWORD_SELECTOR).as('confirmPasswordInput');
     });
   });
 
@@ -60,7 +57,6 @@ describe('Sign Up Page', () => {
     cy.get('title').should('contain', 'Contacts')
   })
 
-
   it('QACW-07: Should display "Email already in use." error alert.', function () {
     create_user(EMAIL, PASSWORD, PASSWORD)
     cy.get('#logout').click()
@@ -69,16 +65,16 @@ describe('Sign Up Page', () => {
     cy.get('body > div.alert.alert-danger.alert-dismissible.fade.show').should('contain', 'Email already in use.')
   })
 
-  USERS.forEach(user => {
-    it(`${user.test}: Should display "${user.error}" error alert.`, function () {
-      create_user(user.email, user.pass1, user.pass2)
-      cy.get('body > div.alert.alert-danger.alert-dismissible.fade.show').should('contain', user.error)
-    })
+  it.each(USERS)((user) => `${user.test}: Should display "${user.error}" error alert.`, function (user) {
+    create_user(user.email, user.pass1, user.pass2)
+    cy.get('body > div.alert.alert-danger.alert-dismissible.fade.show').should('contain', user.error)
   })
 
-  // it.each(USERS)((user) => `${user.test}: Should display "${user.error}" error alert.`, function (user) {
-  //   create_user(user.email, user.pass1, user.pass2)
-  //   cy.get('body > div.alert.alert-danger.alert-dismissible.fade.show').should('contain', user.error)
+  // USERS.forEach(user => {
+  //   it(`${user.test}: Should display "${user.error}" error alert.`, function () {
+  //     create_user(user.email, user.pass1, user.pass2)
+  //     cy.get('body > div.alert.alert-danger.alert-dismissible.fade.show').should('contain', user.error)
+  //   })
   // })
 
 });
