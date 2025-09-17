@@ -1,0 +1,3 @@
+{
+    "DELETE_USER_URL": "{LOCAL_HOST}/delete-user"
+}

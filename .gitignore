@@ -2,3 +2,6 @@ setup.py
 cleanup.py
 /My-Cypress-Project/node_modules
 /My-Cypress-Project/cypress/screenshots/*
+/My-Cypress-Project/package.json
+/My-Cypress-Project/cypress/fixtures/*
+!My-Cypress-Project/cypress/fixtures/examples

@@ -1,0 +1,26 @@
+{
+  "name": "my-cypress-project",
+  "version": "1.0.0",
+  "description": "Cypress project for course work",
+  "main": "e2e",
+  "scripts": {
+    "test": "npx cypress run",
+    "start:server": "cd {PATH_TO_SYSTEM_UNDER_TEST} && python main.py",
+    "cy:run": "cypress run",
+    "test:e2e": "start-server-and-test start:server {MAIN_SUT_ENDPOINT} cy:run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "{LINK_TO_TEST_SUITE_REPO}"
+  },
+  "author": "Heather Frank",
+  "license": "ISC",
+  "dependencies": {
+    "cypress-each": "^1.14.1"
+  },
+  "devDependencies": {
+    "cypress": "^15.2.0",
+    "cypress-xpath": "^2.0.1",
+    "start-server-and-test": "^2.1.1"
+  }
+}

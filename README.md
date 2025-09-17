@@ -23,3 +23,4 @@ This course will cover the core concepts of JavaScript programming.
 5. [Practice Cypress.](https://github.com/sjcswank/qa-course-work/commit/832b3e522a49d198a170b1893b14528a2e290b68)
 6. [Create function create_user() to encapsulate the often repeated steps of creating a user on the Sign Up page.](https://github.com/sjcswank/qa-course-work/commit/5286ad41ad94bdec261b2fafcc18fb6fa3589db3)
 7. [Parameterze tests on the Sign Up page.](https://github.com/sjcswank/qa-course-work/commit/b2eb8108c3e9fa9cebc730ac5eb268b4bf6b45cf)
+8. [Add server management and update data management to use new delete-user functionality in the System Under Test.](https://github.com/sjcswank/qa-course-work/commit/e726ba7675c77afbd1102c6cd8914088ef86e8d9)
