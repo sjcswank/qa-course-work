@@ -7,27 +7,6 @@ const fs = require('fs').promises;
 const directoryPath = 'C:/Users/heath/Workspace/contact-list';
 let systemUnderTest = null
 
-async function waitForLockRelease(filePath, timeout = 10000) {
-  const start = Date.now();
-  while (Date.now() - start < timeout) {
-    try {
-      await fs.access(filePath, fs.constants.F_OK); // Check if file exists
-      // File exists, but is it locked? Let's check with taskkill (Windows-specific)
-      // This is not a foolproof way to check for locks, but it helps
-      // The subsequent fs.rm will fail if it's still locked
-      return; // File is accessible
-    } catch (e) {
-      if (e.code === 'ENOENT') {
-        return; // File already deleted, success
-      }
-      // Assuming 'e.code' could indicate a lock, or just a temporary state
-      console.warn(`File is still locked. Retrying... (Time: ${Date.now() - start}ms)`);
-      await new Promise(resolve => setTimeout(resolve, 500));
-    }
-  }
-  throw new Error(`Timeout waiting for file lock to be released on ${filePath}`);
-}
-
 module.exports = defineConfig({
   e2e: {
     // Declare the function as async so it can properly return a Promise
