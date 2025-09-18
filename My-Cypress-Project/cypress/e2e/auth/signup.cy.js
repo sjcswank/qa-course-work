@@ -1,7 +1,7 @@
 import signUpData from '../../fixtures/signUp.json'
 import deleteUserData from '../../fixtures/deleteUser.json'
 
-describe('Sign Up Page', () => {
+describe('Testing the sign-up page', () => {
 //Test Data
   const USERS = [
     {test: 'QACW-04', email: signUpData.EMAIL, pass1: signUpData.PASSWORD, pass2: signUpData.NOT_MATCHED_PASSWORD, error: signUpData.PASSWORD_MATCH_ERROR},
@@ -32,7 +32,8 @@ describe('Sign Up Page', () => {
     cy.request('POST', deleteUserData.DELETE_USER_URL, {
       userId: 1
     }).then((response) => {
-      expect(response.status).to.be.oneOf([200, 204])
+      if (response.body.Status == 200)
+        expect(response.body.userId).eq(1)
     })
   });
 
@@ -55,11 +56,11 @@ describe('Sign Up Page', () => {
     cy.get('body > div.alert.alert-danger.alert-dismissible.fade.show').should('contain', user.error)
   })
 
-  // // USERS.forEach(user => {
-  // //   it(`${user.test}: Should display "${user.error}" error alert.`, function () {
-  // //     create_user(user.email, user.pass1, user.pass2)
-  // //     cy.get('body > div.alert.alert-danger.alert-dismissible.fade.show').should('contain', user.error)
-  // //   })
-  // // })
+  // USERS.forEach(user => {
+  //   it(`${user.test}: Should display "${user.error}" error alert.`, function () {
+  //     create_user(user.email, user.pass1, user.pass2)
+  //     cy.get('body > div.alert.alert-danger.alert-dismissible.fade.show').should('contain', user.error)
+  //   })
+  // })
 
 });

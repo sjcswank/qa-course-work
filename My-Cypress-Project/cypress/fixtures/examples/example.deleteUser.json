@@ -1,3 +1,6 @@
 {
-    "DELETE_USER_URL": "{LOCAL_HOST}/delete-user"
+    "DELETE_USER_URL": "{LOCAL_HOST}/delete-user",
+    "SIGN_UP_URL": "{LOCAL_HOST}/sign-up",
+    "EMAIL": "test001@email.com",
+    "PASSWORD": "Test001"
 }
