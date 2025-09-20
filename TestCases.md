@@ -127,3 +127,18 @@
 **Expected Result:** The Sign Up page with error alert "Email already in use." should be shown.\
 **Actual Result:** The Sign Up page with error alert "Email already in use." was shown.\
 **Status:** Passed 09/11/2025\
+\
+\
+\
+**Test Case ID:** QACW-08\
+**Test Case Title:** Create New User with no inputs.\
+**Objective:** Verify that an unregistered user can not create a user account using a blank form.\
+**Preconditions:** The Sign Up page with error alert "Email must be more than 3 characters long." should be shown.\
+**Test Steps:**
+
+1. Navigate to the Sign Up page at "http://127.0.0.1:5000/sign-up"
+5. Click "Submit"
+
+**Expected Result:** The Sign Up page with error alert "Email must be more than 3 characters long." should be shown.\
+**Actual Result:** The Sign Up page with error alert "Email must be more than 3 characters long." should be shown.\
+**Status:** Passed 09/19/2025\
