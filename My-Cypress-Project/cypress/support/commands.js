@@ -25,6 +25,7 @@
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
 import signUpData from '../fixtures/signUp.json'
 import deleteUserData from '../fixtures/deleteUser.json'
+import loginData from '../fixtures/loginData.json'
 
 
 Cypress.Commands.add('create_user', (email, password) => { 
@@ -56,9 +57,30 @@ Cypress.Commands.add('delete_user', (email) => {
     })
 })
 
-Cypress.Commands.add('login', (email, password) => { 
-    cy.get('#email').type(email)
-    cy.get('#password').type(password)
-    cy.get('button[type="submit"]').click()
+Cypress.Commands.add('login_user', (email, password) => {
+    cy.request({
+        method: 'POST', 
+        url: loginData.LOGIN_URL, 
+        form: true, 
+        body: {
+            email: email,
+            password: password
+        }
+    }).then((response) => {
+        expect(response.status).to.eq(200)
+    })
+})
+
+Cypress.Commands.add('submit_sign_up', (email, password1, password2) => {
+  cy.get(signUpData.EMAIL_INPUT_SELECTOR).type(email)
+  cy.get(signUpData.PASSWORD1_INPUT_SELECTOR).type(password1)
+  cy.get(signUpData.PASSWORD2_INPUT_SELECTOR).type(password2)
+  cy.get(signUpData.SUBMIT_BUTTON_SELECTOR).click()
+})
+
+Cypress.Commands.add('submit_login', (email, password) => { 
+    cy.get(loginData.EMAIL_INPUT_SELECTOR).type(email)
+    cy.get(loginData.PASSWORD_INPUT_SELECTOR).type(password)
+    cy.get(loginData.SUBMIT_BUTTON_SELECTOR).click()
  })
 

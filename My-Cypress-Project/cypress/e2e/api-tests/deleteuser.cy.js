@@ -1,19 +1,19 @@
-import authData from '../../fixtures/authData.json'
+import loginData from '../../fixtures/loginData.json'
 import deleteUserData from '../../fixtures/deleteUser.json'
 
 describe('Testing the delete-user endpoint', () => {
 
     it('Should delete the user', () => {
-        cy.create_user(authData.EMAIL, authData.PASSWORD)
+        cy.create_user(loginData.EMAIL, loginData.PASSWORD)
         cy.request({
             method: 'POST', 
             url: deleteUserData.DELETE_USER_URL, 
             body: {
-                email: authData.EMAIL
+                email: loginData.EMAIL
                 }
         }).then((response) => {
             expect(response.body.Status).eq(200)
-            expect(response.body.email).eq(authData.EMAIL)
+            expect(response.body.email).eq(loginData.EMAIL)
         })
     })
 

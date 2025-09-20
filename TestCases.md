@@ -10,8 +10,8 @@
 4. Re-enter password "Test001"
 5. Click "Submit"
 
-**Expected Result:** The Contacts page should be shown.\
-**Actual Result:** The Contacts page was shown.\
+**Expected Result:** The success alert "Welcome, test001@email.com should be shown on the Contacts page.\
+**Actual Result:** The success alert "Welcome, test001@email.com was shown on the Contacts page.\
 **Status:** Passed 09/10/2025\
 \
 \
@@ -19,7 +19,7 @@
 **Test Case ID:** QACW-02\
 **Test Case Title:** Login User\
 **Objective:** Verify that a registered user can successfully log in to the application using a valid email and password.\
-**Preconditions:** There should be a valid registered user with email test001@email.com and password Test001.\
+**Preconditions:** There should be a valid registered user with email test001@email.com and password Test001. There should not be a currently logged in user.\
 **Test Steps:**
 
 1. Navigate to the Login page at "http://127.0.0.1:5000/login"
@@ -27,9 +27,9 @@
 3. Enter password "Test001"
 4. Click button labled "Login"
 
-**Expected Result:** The Contacts page should be shown.\
-**Actual Result:**\
-**Status:**\
+**Expected Result:** The Contacts Page with success alert "Welcome back, test001@email.com!" should be displayed.\ 
+**Actual Result:** The Contacts Page with success alert "Welcome back, test001@email.com!" was displayed.\
+**Status:** Passed 9/19/2025\
 \
 \
 \
@@ -83,7 +83,7 @@
 5. Click "Submit"
 
 **Expected Result:** The Sign Up page with error alert "Password must be at least 7 characters long." should be shown.\
-**Actual Result:** Error alert "Password must at least 7 characters long." was shown.\
+**Actual Result:** The Sign Up page with error alert "Password must at least 7 characters long." was shown.\
 **Status:** Failed 09/11/2025\
 \
 \
@@ -133,12 +133,61 @@
 **Test Case ID:** QACW-08\
 **Test Case Title:** Create New User with no inputs.\
 **Objective:** Verify that an unregistered user can not create a user account using a blank form.\
-**Preconditions:** The Sign Up page with error alert "Email must be more than 3 characters long." should be shown.\
+**Preconditions:** There should not be a currently logged-in user.\
 **Test Steps:**
 
 1. Navigate to the Sign Up page at "http://127.0.0.1:5000/sign-up"
-5. Click "Submit"
+2. Click "Submit"
 
 **Expected Result:** The Sign Up page with error alert "Email must be more than 3 characters long." should be shown.\
-**Actual Result:** The Sign Up page with error alert "Email must be more than 3 characters long." should be shown.\
+**Actual Result:** The Sign Up page with error alert "Email must be more than 3 characters long." was shown.\
 **Status:** Passed 09/19/2025\
+\
+\
+\
+**Test Case ID:** QACW-09\
+**Test Case Title:** Login User with invalid email.\
+**Objective:** Verify that a user can not log in to the application using an invalid email.\
+**Preconditions:** There should not be a currently logged in user.\
+**Test Steps:**
+
+1. Navigate to the Login page at "http://127.0.0.1:5000/login"
+2. Enter email "unregistered@email.com"
+3. Enter password "Test001"
+4. Click button labled "Login"
+
+**Expected Result:** The Login Page with error alert "Email does not exist." should be displayed.\ 
+**Actual Result:** The Login Page with error alert "Email does not exist." was displayed.\ 
+**Status:** Passed 9/19/2025\
+\
+\
+\
+**Test Case ID:** QACW-10\
+**Test Case Title:** Login User with invalid password.\
+**Objective:** Verify that a user can not log in to the application using a valid registered email and an invalid password.\
+**Preconditions:** There should be a valid registered user with email test001@email.com and password Test001. There should not be a currently logged in user.\
+**Test Steps:**
+
+1. Navigate to the Login page at "http://127.0.0.1:5000/login"
+2. Enter email "test001@email.com"
+3. Enter password "Invalid1"
+4. Click button labled "Login"
+
+**Expected Result:** The Login Page with error alert "Email does not exist." should be displayed.\ 
+**Actual Result:** The Login Page with error alert "Email does not exist." was displayed.\
+**Status:** Passed 9/19/2025\
+\
+\
+\
+**Test Case ID:** QACW-11\
+**Test Case Title:** Submit Login form with no data.\
+**Objective:** Verify that a user can not log in to the application using a blank form.\
+**Preconditions:** There should not be a currently logged in user.\
+**Test Steps:**
+
+1. Navigate to the Login page at "http://127.0.0.1:5000/login"
+2. Click button labled "Login"
+
+**Expected Result:** The Login Page with error alert "Email does not exist." should be displayed.\ 
+**Actual Result:** The Login Page with error alert "Email does not exist." was displayed.\ 
+**Status:** Passed 9/19/2025\

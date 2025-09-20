@@ -1,24 +1,18 @@
 import signUpData from '../../fixtures/signUp.json'
-import deleteUserData from '../../fixtures/deleteUser.json'
-import authData from '../../fixtures/authData.json'
+import loginData from '../../fixtures/loginData.json'
 
-describe('Testing the sign-up page', () => {
+describe('Sign Up Page Tests', () => {
+
 // Shared Variables
   let createdUserEmail = ''
+
 // Test Data
   const USERS = [
-    {test: 'QACW-04: Submitting the form with unmatched passwords', email: authData.EMAIL, pass1: authData.PASSWORD, pass2: signUpData.NOT_MATCHED_PASSWORD, error: signUpData.PASSWORD_MATCH_ERROR},
-    {test: 'QACW-05: Submitting the form with invalid passwords', email: authData.EMAIL, pass1: authData.INVALID_PASSWORD, pass2: authData.INVALID_PASSWORD, error: signUpData.INVALID_PASSWORD_ERROR},
-    {test: 'QACW-06: Submitting the form with invalid email', email: authData.INVALID_EMAIL, pass1: authData.PASSWORD, pass2: authData.PASSWORD, error: signUpData.INVALID_EMAIL_ERROR}
+    {test: 'QACW-04: Submitting the form with unmatched passwords', email: loginData.EMAIL, pass1: loginData.PASSWORD, pass2: signUpData.NOT_MATCHED_PASSWORD, error: signUpData.PASSWORD_MATCH_ERROR},
+    {test: 'QACW-05: Submitting the form with invalid passwords', email: loginData.EMAIL, pass1: signUpData.INVALID_PASSWORD, pass2: signUpData.INVALID_PASSWORD, error: signUpData.INVALID_PASSWORD_ERROR},
+    {test: 'QACW-06: Submitting the form with invalid email', email: signUpData.INVALID_EMAIL, pass1: loginData.PASSWORD, pass2: loginData.PASSWORD, error: signUpData.INVALID_EMAIL_ERROR}
   ]
   
-// Functions
-const sign_up_user = (email, password1, password2) => {
-  cy.get(signUpData.EMAIL_INPUT_SELECTOR).type(email)
-  cy.get(signUpData.PASSWORD1_INPUT_SELECTOR).type(password1)
-  cy.get(signUpData.PASSWORD2_INPUT_SELECTOR).type(password2)
-  cy.get(signUpData.SUBMIT_BUTTON_SELECTOR).click()
-}
   
   beforeEach('Set up for the test', function() {
     cy.delete_user(createdUserEmail).then(() => {
@@ -30,19 +24,19 @@ const sign_up_user = (email, password1, password2) => {
     cy.delete_user(createdUserEmail)
   })
 
-  it(`QACW-01: Submitting the form with valid data should display "Welcome, ${authData.EMAIL}!" alert on Contacts page`, function () {
-    sign_up_user(authData.EMAIL, authData.PASSWORD, authData.PASSWORD)
-    createdUserEmail = authData.EMAIL
-    cy.get('.alert.alert-success.show').should('contain', 'Welcome, ' + authData.EMAIL + '!')
+  it(`QACW-01: Submitting the form with valid data should display "Welcome, ${loginData.EMAIL}!" alert on Contacts page`, function () {
+    cy.submit_sign_up(loginData.EMAIL, loginData.PASSWORD, loginData.PASSWORD)
+    createdUserEmail = loginData.EMAIL
+    cy.get('.alert.alert-success.show').should('contain', 'Welcome, ' + loginData.EMAIL + '!')
     cy.get('title').should('contain', 'Contacts')
   })
 
   it('QACW-07: Submitting the form with a valid registered email should display "Email already in use." error alert.', function () {
-    sign_up_user(authData.EMAIL, authData.PASSWORD, authData.PASSWORD)
-    createdUserEmail = authData.EMAIL
+    cy.submit_sign_up(loginData.EMAIL, loginData.PASSWORD, loginData.PASSWORD)
+    createdUserEmail = loginData.EMAIL
     cy.get('#logout').click()
     cy.visit(signUpData.SIGN_UP_URL)
-    sign_up_user(authData.EMAIL, authData.PASSWORD, authData.PASSWORD)
+    cy.submit_sign_up(loginData.EMAIL, loginData.PASSWORD, loginData.PASSWORD)
     cy.get('.alert.alert-danger.show').should('contain', 'Email already in use.')
   })
 
@@ -53,7 +47,7 @@ const sign_up_user = (email, password1, password2) => {
   })
 
   it.each(USERS)((user) => `${user.test} should display "${user.error}" error alert.`, function (user) {
-    sign_up_user(user.email, user.pass1, user.pass2)
+    cy.submit_sign_up(user.email, user.pass1, user.pass2)
     createdUserEmail = user.email
     cy.get('.alert.alert-danger.show').should('contain', user.error)
   })
@@ -61,7 +55,7 @@ const sign_up_user = (email, password1, password2) => {
 
   // USERS.forEach(user => {
   //   it(`${user.test}: Should display "${user.error}" error alert.`, function () {
-  //     create_user(user.email, user.pass1, user.pass2)
+  //     cy.sign_up_user(user.email, user.pass1, user.pass2)
   //     cy.get('body > div.alert.alert-danger.alert-dismissible.fade.show').should('contain', user.error)
   //   })
   // })

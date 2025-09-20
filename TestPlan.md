@@ -9,8 +9,8 @@
 **Team/Stakeholders:**  
 
 ## Test Items
-1. Create New User
-2. Login Exsisting User
+1. Create New User *Complete
+2. Login Exsisting User *Complete
 3. Log Out Exsisting User
 4. Accessibility requirements for the landing page
 
@@ -33,11 +33,11 @@
 8/30/2025: Preliminary Test Plan Written  
 9/1/2025: Critical Test Cases Written  
 9/2/2025: Test Plan Accepted  
-9/12/2025: Testing Concluded  
+10/2/2025: Testing Concluded  
 
 ## Test Strategy
 **Types of Testing:** Functional, Performance, Accessibility, Acceptance.  
-**Testing Environments:** Development, Staging, Prod  
+**Testing Environments:** Development, Test, Prod  
 **Device Matrix:**  
 | Platform | Operating System | Browser | Version |
 |:---------|:----------------:|:-------:|--------:|
