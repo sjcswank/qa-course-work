@@ -5,3 +5,4 @@ cleanup.py
 /My-Cypress-Project/package.json
 /My-Cypress-Project/cypress/fixtures/*
 !My-Cypress-Project/cypress/fixtures/examples
+/My-Cypress-Project/cypress/results/*

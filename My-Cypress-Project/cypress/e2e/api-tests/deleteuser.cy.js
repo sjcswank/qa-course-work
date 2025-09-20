@@ -1,39 +1,19 @@
+import authData from '../../fixtures/authData.json'
 import deleteUserData from '../../fixtures/deleteUser.json'
 
 describe('Testing the delete-user endpoint', () => {
 
-    beforeEach('Set up test', () => {
-        cy.request({
-            method: 'POST', 
-            url: deleteUserData.SIGN_UP_URL, 
-            form: true, 
-            body: {
-                email: deleteUserData.EMAIL,
-                password1: deleteUserData.PASSWORD,
-                password2: deleteUserData.PASSWORD
-            }
-        })
-    })
-
-    afterEach('Clean up after test', () => {
-        cy.request('POST', deleteUserData.DELETE_USER_URL, {
-            userId: 1
-        }).then((response) => {
-            if (response.body.Status == 200)
-                expect(response.body.userId).eq(1)
-        })
-    })
-
     it('Should delete the user', () => {
+        cy.create_user(authData.EMAIL, authData.PASSWORD)
         cy.request({
             method: 'POST', 
             url: deleteUserData.DELETE_USER_URL, 
             body: {
-                userId: 1
+                email: authData.EMAIL
                 }
         }).then((response) => {
             expect(response.body.Status).eq(200)
-            expect(response.body.userId).eq(1)
+            expect(response.body.email).eq(authData.EMAIL)
         })
     })
 
@@ -42,11 +22,11 @@ describe('Testing the delete-user endpoint', () => {
             method: 'POST', 
             url: deleteUserData.DELETE_USER_URL, 
             body: {
-                userId: 2
+                email: deleteUserData.INCORRECT_EMAIL
                 }
         }).then((response) => {
             expect(response.body.Status).eq(204)
-            expect(response.body.userId).eq(null)
+            expect(response.body.email).eq(null)
         })
     })
 
