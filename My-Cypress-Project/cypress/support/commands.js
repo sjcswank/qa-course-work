@@ -23,8 +23,8 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-import signUpData from '../fixtures/signUp.json'
-import deleteUserData from '../fixtures/deleteUser.json'
+import signUpData from '../fixtures/signUpData.json'
+import deleteUserData from '../fixtures/deleteUserData.json'
 import loginData from '../fixtures/loginData.json'
 
 Cypress.Commands.add('logAccessibilityViolations', (violations) => {
