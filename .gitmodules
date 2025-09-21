@@ -1,0 +1,3 @@
+[submodule "My-Cypress-Project/program_under_test/contact-list"]
+	path = My-Cypress-Project/program_under_test/contact-list
+	url = https://github.com/sjcswank/contact-list.git
