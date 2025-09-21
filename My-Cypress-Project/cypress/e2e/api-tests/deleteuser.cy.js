@@ -1,5 +1,5 @@
 import loginData from '../../fixtures/loginData.json'
-import deleteUserData from '../../fixtures/deleteUser.json'
+import deleteUserData from '../../fixtures/deleteUserData.json'
 
 describe('Testing the delete-user endpoint', () => {
 

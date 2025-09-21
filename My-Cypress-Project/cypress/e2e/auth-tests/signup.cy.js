@@ -1,5 +1,4 @@
-import signUpData from '../../fixtures/signUp.json'
-import loginData from '../../fixtures/loginData.json'
+import signUpData from '../../fixtures/signUpData.json'
 
 describe('Sign Up Page Tests', () => {
 
@@ -8,9 +7,9 @@ describe('Sign Up Page Tests', () => {
 
 // Test Data
   const USERS = [
-    {test: 'QACW-04: Submitting the form with unmatched passwords', email: loginData.EMAIL, pass1: loginData.PASSWORD, pass2: signUpData.NOT_MATCHED_PASSWORD, error: signUpData.PASSWORD_MATCH_ERROR},
-    {test: 'QACW-05: Submitting the form with invalid passwords', email: loginData.EMAIL, pass1: signUpData.INVALID_PASSWORD, pass2: signUpData.INVALID_PASSWORD, error: signUpData.INVALID_PASSWORD_ERROR},
-    {test: 'QACW-06: Submitting the form with invalid email', email: signUpData.INVALID_EMAIL, pass1: loginData.PASSWORD, pass2: loginData.PASSWORD, error: signUpData.INVALID_EMAIL_ERROR}
+    {test: 'QACW-04: Submitting the form with unmatched passwords', email: signUpData.EMAIL, pass1: signUpData.PASSWORD, pass2: signUpData.NOT_MATCHED_PASSWORD, error: signUpData.PASSWORD_MATCH_ERROR},
+    {test: 'QACW-05: Submitting the form with invalid passwords', email: signUpData.EMAIL, pass1: signUpData.INVALID_PASSWORD, pass2: signUpData.INVALID_PASSWORD, error: signUpData.INVALID_PASSWORD_ERROR},
+    {test: 'QACW-06: Submitting the form with invalid email', email: signUpData.INVALID_EMAIL, pass1: signUpData.PASSWORD, pass2: signUpData.PASSWORD, error: signUpData.INVALID_EMAIL_ERROR}
   ]
   
   beforeEach('Set up for the test', function() {
@@ -23,19 +22,19 @@ describe('Sign Up Page Tests', () => {
     cy.delete_user(createdUserEmail)
   })
 
-  it(`QACW-01: Submitting the form with valid data should display "Welcome, ${loginData.EMAIL}!" alert on Contacts page`, function () {
-    cy.submit_sign_up(loginData.EMAIL, loginData.PASSWORD, loginData.PASSWORD)
-    createdUserEmail = loginData.EMAIL
-    cy.get('.alert.alert-success.show').should('contain', 'Welcome, ' + loginData.EMAIL + '!')
+  it(`QACW-01: Submitting the form with valid data should display "Welcome, ${signUpData.EMAIL}!" alert on Contacts page`, function () {
+    cy.submit_sign_up(signUpData.EMAIL, signUpData.PASSWORD, signUpData.PASSWORD)
+    createdUserEmail = signUpData.EMAIL
+    cy.get('.alert.alert-success.show').should('contain', 'Welcome, ' + signUpData.EMAIL + '!')
     cy.get('title').should('contain', 'Contacts')
   })
 
   it('QACW-07: Submitting the form with a valid registered email should display "Email already in use." error alert.', function () {
-    cy.submit_sign_up(loginData.EMAIL, loginData.PASSWORD, loginData.PASSWORD)
-    createdUserEmail = loginData.EMAIL
+    cy.submit_sign_up(signUpData.EMAIL, signUpData.PASSWORD, signUpData.PASSWORD)
+    createdUserEmail = signUpData.EMAIL
     cy.get('#logout').click()
     cy.visit(signUpData.SIGN_UP_URL)
-    cy.submit_sign_up(loginData.EMAIL, loginData.PASSWORD, loginData.PASSWORD)
+    cy.submit_sign_up(signUpData.EMAIL, signUpData.PASSWORD, signUpData.PASSWORD)
     cy.get('.alert.alert-danger.show').should('contain', 'Email already in use.')
   })
 
