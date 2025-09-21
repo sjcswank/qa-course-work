@@ -17,5 +17,6 @@
 import './commands'
 import 'cypress-each'
 import 'cypress-xpath'
+import 'cypress-axe'
 
 require('cypress-terminal-report/src/installLogsCollector')();

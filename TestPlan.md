@@ -11,8 +11,8 @@
 ## Test Items
 1. Create New User *Complete
 2. Login Exsisting User *Complete
-3. Log Out Exsisting User
-4. Accessibility requirements for the landing page
+3. Log Out Exsisting User *Complete
+4. Accessibility requirements for the Login page *Complete
 
 ## Test Criteria
 **Entry Criteria:** Conditions that must be met before testing begins.  
@@ -48,14 +48,14 @@
 - Create New User: User should be able to enter a username and password and create a new user from that info.
 - Login User: User should be able to enter a username and password and login to an exsiting user account.
 - Log Out User: User should be able to click a log Out button and no longer be logge in to a user account.
-- Accessibility of the landing page: All elements on the landing page should meet Web Content Accessibility Guidelines.
+- Accessibility of the Login page: All elements on the landing page should meet Web Content Accessibility Guidelines Level AA standards.
 
 ## Test Deliverables
 - Test Cases:
   - Verify that a registered user can successfully log in to the application using a valid username and password.
   - Verify that an unregistered user can successfully create a user account using a valid username and password.
   - Verify that a registered user can successfully log out of the application by clicking the log out button.
-  - Verify that all meaningful images on the landing page have appropriate alternative text.
+  - Verify that the Login page meet WCAG2.1A and WCAG2.1AA Guidelines and accessibility best practices.
 - Documentation:
   - Test Cases
   - Test Scripts

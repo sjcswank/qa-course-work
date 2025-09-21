@@ -14,6 +14,19 @@ module.exports = defineConfig({
         },
       });
 
+      on('task', {
+        // Log a message to the terminal
+        log(message) {
+          console.log(message);
+          return null;
+        },
+        // Log a table to the terminal
+        table(message) {
+          console.table(message);
+          return null;
+        }
+      });
+
       return config;
     },
   },

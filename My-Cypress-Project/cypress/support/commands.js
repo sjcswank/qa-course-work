@@ -27,6 +27,27 @@ import signUpData from '../fixtures/signUp.json'
 import deleteUserData from '../fixtures/deleteUser.json'
 import loginData from '../fixtures/loginData.json'
 
+Cypress.Commands.add('logAccessibilityViolations', (violations) => {
+    // Log the number of violations found
+    cy.task(
+        'log',
+        `${violations.length} accessibility violation${
+            violations.length === 1 ? '' : 's'
+        } detected`
+    )
+    // Iterate through the array of violation objects
+    violations.forEach((violation) => {
+        // Log the rule that failed
+        cy.task('log', `\nRule: ${violation.id}`)
+        // Log a link to the rule documentation for more info
+        cy.task('log', `Documentation: ${violation.helpUrl}`)
+        // Log the failing nodes for this rule
+        cy.task('log', `Failing nodes:`)
+        violation.nodes.forEach((node) => {
+            cy.task('log', `  - ${node.target}`)
+        })
+    })
+})
 
 Cypress.Commands.add('create_user', (email, password) => { 
     cy.request({

@@ -191,3 +191,22 @@
 **Expected Result:** The Login Page with error alert "Email does not exist." should be displayed.\ 
 **Actual Result:** The Login Page with error alert "Email does not exist." was displayed.\ 
 **Status:** Passed 9/19/2025\
+\
+\
+\
+**Test Case ID:** QACW-12\
+**Test Case Title:** The Login page is accessible.\
+**Objective:** Verify that there are no WCAG2.1A and WCAG2.1AA guidelines and accessibility best practice violations on the Login Page.\
+**Preconditions:** There should not be a currently logged in user. There should be a registered user with email test001@email.com and password Test001.\
+**Test Steps:**
+
+1. Navigate to the Login page at "http://127.0.0.1:5000/login"
+2. There should be no violations
+3. Submit form with email "unregistered@email.com" and password "Test001"
+4. There should be no violations
+5. Submit form with email "test001@email.com" and password "Invalid1"
+6. There should be no violations
+
+**Expected Result:** There should be no violations on the Login page.\ 
+**Actual Result:** \ 
+**Status:** \

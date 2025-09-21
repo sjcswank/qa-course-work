@@ -16,7 +16,7 @@ describe('Logout Functionality', () => {
         cy.delete_user(loginData.EMAIL);
     })
 
-    it('should log out successfully and redirect to login page', () => {
+    it('QACW-03: Clicking the Logout link should log out successfully and redirect to Login page', () => {
         cy.get('a[href="/logout"]').click();
         cy.url().should('include', '/login');
         cy.get('title').should('contain', 'Login')
