@@ -13,7 +13,6 @@ describe('Sign Up Page Tests', () => {
     {test: 'QACW-06: Submitting the form with invalid email', email: signUpData.INVALID_EMAIL, pass1: loginData.PASSWORD, pass2: loginData.PASSWORD, error: signUpData.INVALID_EMAIL_ERROR}
   ]
   
-  
   beforeEach('Set up for the test', function() {
     cy.delete_user(createdUserEmail).then(() => {
       cy.visit(signUpData.SIGN_UP_URL)
@@ -52,7 +51,6 @@ describe('Sign Up Page Tests', () => {
     cy.get('.alert.alert-danger.show').should('contain', user.error)
   })
   
-
   // USERS.forEach(user => {
   //   it(`${user.test}: Should display "${user.error}" error alert.`, function () {
   //     cy.sign_up_user(user.email, user.pass1, user.pass2)

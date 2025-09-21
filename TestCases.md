@@ -35,20 +35,20 @@
 \
 **Test Case ID:** QACW-03\
 **Test Case Title:** Log Out User.\
-**Objective:** Verify that a logged in user can successfully log out of the application by clicking the log out button.\
-**Preconditions:** There should be a valid registered user with email test001@email.com and password Test001.\
+**Objective:** Verify that a logged in user can successfully log out of the application by clicking the log out link.\
+**Preconditions:** There should be a valid registered, LOGGED IN user with email test001@email.com and password Test001.\
 **Test Steps:**
 
-1. Navigate to the Login page at "http://127.0.0.1:5000/login"
-2. Enter email "test001@email.com"
-3. Enter password "Test001"
-4. Click button labled "Login" 
-5. Contacts page should be displayed
-6. Click button labled "Log Out"
+1. Navigate to the Home page at "http://127.0.0.1:5000/"
+2. Contacts Page should be shown.
+3. Click link labled "Logout"
+4. The Login page should be shown.
+5. Navigate to the Home page "http://127.0.0.1:5000/".
+6. The Login page should be shown.
 
-**Expected Result:** The Login page should be shown, no user should be logged in.\
-**Actual Result:**\
-**Status:**
+**Expected Result:** The Login page should be shown.\
+**Actual Result:** The Login Page was shown.\
+**Status:** Passed 9/20/2025\
 \
 \
 \
