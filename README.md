@@ -26,5 +26,5 @@ This course will cover the core concepts of JavaScript programming.
 4.1. [Add tests for the new /delete-user api endpoint](https://github.com/sjcswank/qa-course-work/commit/557db5c027bf01ef161f06faeacdc37060eebd9c)\
 4.2. [Add server management and update data management to use new delete-user functionality in the System Under Test.](https://github.com/sjcswank/qa-course-work/commit/e726ba7675c77afbd1102c6cd8914088ef86e8d9)\
 5.1. [Update tests and configurations to use async functions and promises when needed.](https://github.com/sjcswank/qa-course-work/commit/e1110ee9c1ce4bfc64492a97b46c142024277f20)\
-6.1. [Set Up a JavaScript projects to practice Jest unit testing.](https://github.com/sjcswank/qa-course-work/commit/9d8f78367066086db24588e5b78ed81c32fc07c7)\
-6.2. [Write Jest unit tests for the react-calc program.](https://github.com/sjcswank/react-calc/commit/e3fc51719e830360d6ac1e8d851a3fe1da0248f1)\
+6.1. [Set Up JavaScript projects to practice Jest unit testing.](https://github.com/sjcswank/qa-course-work/commit/9d8f78367066086db24588e5b78ed81c32fc07c7)\
+6.2. [Write Jest unit tests for the react-calc program.](https://github.com/sjcswank/react-calc/commit/e3fc51719e830360d6ac1e8d851a3fe1da0248f1)
