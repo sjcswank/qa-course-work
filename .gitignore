@@ -1,8 +1,9 @@
 setup.py
 cleanup.py
 /My-Cypress-Project/node_modules
-/My-Cypress-Project/cypress/screenshots/*
+/My-Cypress-Project/cypress/screenshots
 /My-Cypress-Project/package.json
 /My-Cypress-Project/cypress/fixtures/*
 !My-Cypress-Project/cypress/fixtures/examples
-/My-Cypress-Project/cypress/results/*
+/My-Cypress-Project/cypress/results
+/Mocha-Practice/mocha-example-project/node_modules
