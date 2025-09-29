@@ -1,0 +1,20 @@
+{
+  "name": "advanced-cypress-practice",
+  "version": "1.0.0",
+  "description": "Cypress project for course work",
+  "main": "index.js",
+  "scripts": {
+    "test": "npx cypress run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sjcswank/qa-course-work"
+  },
+  "author": "Heather Frank",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "cypress": "^15.3.0",
+    "cypress-real-events": "^1.15.0"
+  }
+}
