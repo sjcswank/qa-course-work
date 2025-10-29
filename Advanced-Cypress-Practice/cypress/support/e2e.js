@@ -13,4 +13,4 @@
 // https://on.cypress.io/configuration
 // ***********************************************************
 import './commands';
-import "cypress-real-events/support";
+import 'cypress-real-events/support';
