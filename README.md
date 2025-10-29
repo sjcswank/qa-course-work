@@ -30,5 +30,5 @@ This course will cover the core concepts of JavaScript programming.
 6.2. [Write Jest unit tests for the react-calc program.](https://github.com/sjcswank/react-calc/commit/e3fc51719e830360d6ac1e8d851a3fe1da0248f1)\
 6.3 [Write Jest unit tests for the react-todo program, including mocking function calls.](https://github.com/sjcswank/react-todo/pull/1/commits/c3ef07075c443385cf159025c14530f6de9fa9c0#diff-1133360bb31a84b44b8ba3594699908403d51883ab090c51914001e679004a5e)\
 6.4 [Create a sample Node.js project and write a mocha test.](https://github.com/sjcswank/qa-course-work/pull/3/commits/e6bde12532155e1381b34ac8d274e2fa5ff335be)\
-6.5 [Create Node.js async functions/promises and test them with Mocha.](https://github.com/sjcswank/qa-course-work/pull/4)
+6.5 [Create Node.js async functions/promises and test them with Mocha.](https://github.com/sjcswank/qa-course-work/pull/4)\
 7.1 [Write Cypress tests with advanced selector methods.](https://github.com/sjcswank/qa-course-work/commit/87a566467cc2a82f170c177d5af805d9a3b90b7b)
