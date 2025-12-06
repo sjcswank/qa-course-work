@@ -12,12 +12,12 @@
 
 **Expected Result:** The success alert "Welcome, test001@email.com should be shown on the Contacts page.\
 **Actual Result:** The success alert "Welcome, test001@email.com was shown on the Contacts page.\
-**Status:** Passed 09/10/2025\
-\
-\
+**Status:** Passed 09/10/2025
+
+---
 \
 **Test Case ID:** QACW-02\
-**Test Case Title:** Login User\
+**Test Case Title:** Login User.\
 **Objective:** Verify that a registered user can successfully log in to the application using a valid email and password.\
 **Preconditions:** There should be a valid registered user with email test001@email.com and password Test001. There should not be a currently logged in user.\
 **Test Steps:**
@@ -27,11 +27,11 @@
 3. Enter password "Test001"
 4. Click button labled "Login"
 
-**Expected Result:** The Contacts Page with success alert "Welcome back, test001@email.com!" should be displayed.\ 
+**Expected Result:** The Contacts Page with success alert "Welcome back, test001@email.com!" should be displayed.\
 **Actual Result:** The Contacts Page with success alert "Welcome back, test001@email.com!" was displayed.\
-**Status:** Passed 9/19/2025\
-\
-\
+**Status:** Passed 9/19/2025
+
+---
 \
 **Test Case ID:** QACW-03\
 **Test Case Title:** Log Out User.\
@@ -40,17 +40,17 @@
 **Test Steps:**
 
 1. Navigate to the Home page at "http://127.0.0.1:5000/"
-2. Contacts Page should be shown.
+2. Contacts Page should be shown
 3. Click link labled "Logout"
 4. The Login page should be shown.
-5. Navigate to the Home page "http://127.0.0.1:5000/".
-6. The Login page should be shown.
+5. Navigate to the Home page "http://127.0.0.1:5000/"
+6. The Login page should be shown
 
 **Expected Result:** The Login page should be shown.\
 **Actual Result:** The Login Page was shown.\
-**Status:** Passed 9/20/2025\
-\
-\
+**Status:** Passed 9/20/2025
+
+---
 \
 **Test Case ID:** QACW-04\
 **Test Case Title:** Create New User with not-matched passwords.\
@@ -66,9 +66,9 @@
 
 **Expected Result:** The Sign Up page with error alert "Passwords do no match." should be shown.\
 **Actual Result:** The Sign Up page with error alert "Passwords do no match." was shown.\
-**Status:** Passed 09/11/2025\
-\
-\
+**Status:** Passed 09/11/2025
+
+---
 \
 **Test Case ID:** QACW-05\
 **Test Case Title:** Create New User with invalid password.\
@@ -84,9 +84,9 @@
 
 **Expected Result:** The Sign Up page with error alert "Password must be at least 7 characters long." should be shown.\
 **Actual Result:** The Sign Up page with error alert "Password must at least 7 characters long." was shown.\
-**Status:** Failed 09/11/2025\
-\
-\
+**Status:** Failed 09/11/2025
+
+---
 \
 **Test Case ID:** QACW-06\
 **Test Case Title:** Create New User with invalid email.\
@@ -102,9 +102,9 @@
 
 **Expected Result:** The Sign Up page with error alert "Email must be more than 3 characters long." should be shown.\
 **Actual Result:** The Sign Up page with error alert "Email must be more than 3 characters long." was shown.\
-**Status:** Passed 09/11/2025\
-\
-\
+**Status:** Passed 09/11/2025
+
+---
 \
 **Test Case ID:** QACW-07\
 **Test Case Title:** Create New User with email already in use.\
@@ -126,9 +126,9 @@
 
 **Expected Result:** The Sign Up page with error alert "Email already in use." should be shown.\
 **Actual Result:** The Sign Up page with error alert "Email already in use." was shown.\
-**Status:** Passed 09/11/2025\
-\
-\
+**Status:** Passed 09/11/2025
+
+---
 \
 **Test Case ID:** QACW-08\
 **Test Case Title:** Create New User with no inputs.\
@@ -141,9 +141,9 @@
 
 **Expected Result:** The Sign Up page with error alert "Email must be more than 3 characters long." should be shown.\
 **Actual Result:** The Sign Up page with error alert "Email must be more than 3 characters long." was shown.\
-**Status:** Passed 09/19/2025\
-\
-\
+**Status:** Passed 09/19/2025
+
+---
 \
 **Test Case ID:** QACW-09\
 **Test Case Title:** Login User with invalid email.\
@@ -156,11 +156,11 @@
 3. Enter password "Test001"
 4. Click button labled "Login"
 
-**Expected Result:** The Login Page with error alert "Email does not exist." should be displayed.\ 
-**Actual Result:** The Login Page with error alert "Email does not exist." was displayed.\ 
-**Status:** Passed 9/19/2025\
-\
-\
+**Expected Result:** The Login Page with error alert "Email does not exist." should be displayed.\
+**Actual Result:** The Login Page with error alert "Email does not exist." was displayed.\
+**Status:** Passed 9/19/2025
+
+---
 \
 **Test Case ID:** QACW-10\
 **Test Case Title:** Login User with invalid password.\
@@ -173,11 +173,11 @@
 3. Enter password "Invalid1"
 4. Click button labled "Login"
 
-**Expected Result:** The Login Page with error alert "Email does not exist." should be displayed.\ 
+**Expected Result:** The Login Page with error alert "Email does not exist." should be displayed.\
 **Actual Result:** The Login Page with error alert "Email does not exist." was displayed.\
-**Status:** Passed 9/19/2025\
-\
-\
+**Status:** Passed 9/19/2025
+
+---
 \
 **Test Case ID:** QACW-11\
 **Test Case Title:** Submit Login form with no data.\
@@ -188,11 +188,11 @@
 1. Navigate to the Login page at "http://127.0.0.1:5000/login"
 2. Click button labled "Login"
 
-**Expected Result:** The Login Page with error alert "Email does not exist." should be displayed.\ 
-**Actual Result:** The Login Page with error alert "Email does not exist." was displayed.\ 
-**Status:** Passed 9/19/2025\
-\
-\
+**Expected Result:** The Login Page with error alert "Email does not exist." should be displayed.\
+**Actual Result:** The Login Page with error alert "Email does not exist." was displayed.\
+**Status:** Passed 9/19/2025
+
+---
 \
 **Test Case ID:** QACW-12\
 **Test Case Title:** The Login page is accessible.\
@@ -207,6 +207,8 @@
 5. Submit form with email "test001@email.com" and password "Invalid1"
 6. There should be no violations
 
-**Expected Result:** There should be no violations on the Login page.\ 
-**Actual Result:** \ 
-**Status:** \
+**Expected Result:** There should be no violations on the Login page.\
+**Actual Result:** \
+**Status:** Not Tested
+
+---
